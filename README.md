@@ -45,10 +45,9 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Alhassan Osman's Portfolio](https://flemton.github.io/my-portfolio/) <a name="about-project"></a>
+# 📖 Vet Clinic <a name="about-project"></a>
 
-**[My Portfolio](https://flemton.github.io/my-portfolio/)** is one of the most powerful tool in my software developer toolbox; it’s the easiest way of showing what I am truly capable of as a developer, and is a quick and simple way for recruiters and hiring managers to get an idea of what I can bring to their teams.
-**[Click here](https://flemton.github.io/my-portfolio/) for a [live](https://flemton.github.io/my-portfolio/) version to [my portfolio](https://flemton.github.io/my-portfolio/)**
+**Vet clinic** is a repo that has SQL queries to use a relational database to create the data structure for a vet clinic
 
 ## 🛠 Built With <a name="built-with"></a>
 - PostgreSQL
@@ -56,13 +55,6 @@ This repository includes files with plain SQL that can be used to recreate a dat
 ### Tech Stack <a name="tech-stack"></a>
 
 * SQL
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Node.js</a></li>
-  </ul>
-</details>
 
 <!-- Features -->
 
