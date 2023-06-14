@@ -92,7 +92,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone git@github.com:flemton/vet_clinic.git
+  git clone git@github.com:flemton/vet-clinic.git
 ```
 
 ### Install
