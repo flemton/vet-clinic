@@ -10,6 +10,12 @@ SELECT * FROM animals WHERE NOT name = 'Gabumon';
 SELECT * FROM animals WHERE weight_kg  BETWEEN 10.4 and 17.3;
 
 BEGIN;
+SAVEPOINT save1;
+DELETE FROM animals;
+ROLLBACK TO SAVEPOINT save1;
+COMMIT;
+
+BEGIN;
 SAVEPOINT begin;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 SAVEPOINT middle;
