@@ -26,3 +26,17 @@ UPDATE animals SET weight_kg = weight_kg * -1;
 ROLLBACK TO SAVEPOINT delete;
 UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 COMMIT;
+
+SELECT COUNT(*) FROM animals;
+SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
+SELECT AVG(weight_kg) FROM animals;
+SELECT COUNT(escape_attempts) FROM animals WHERE neutered = false;
+SELECT COUNT(escape_attempts) FROM animals WHERE neutered = true;
+SELECT MIN(weight_kg) FROM animals WHERE species = 'pokemon';
+SELECT MAX(weight_kg) FROM animals WHERE species = 'pokemon';
+SELECT MIN(weight_kg) FROM animals WHERE species = 'digimon';
+SELECT MAX(weight_kg) FROM animals WHERE species = 'digimon';
+SELECT AVG(escape_attempts) FROM animals 
+WHERE species = 'digimon' and (date_of_birth > '1990-01-01' and date_of_birth < '2000-12-31');
+SELECT AVG(escape_attempts) FROM animals 
+WHERE species = 'pokemon' and (date_of_birth > '1990-01-01' and date_of_birth < '2000-12-31');
