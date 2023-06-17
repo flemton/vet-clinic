@@ -20,3 +20,7 @@ VALUES ('Sam Smith', 34),
 ('Bob', 45),
 ('Melody Ponbd', 77),
 ('Dean Winchester', 38);
+
+INSERT INTO species (name)
+VALUES ('Pokemon'),
+('Digimon');
