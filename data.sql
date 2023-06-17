@@ -38,3 +38,19 @@ SET species_id = (SELECT id FROM species WHERE name = 'Digimon')
  UPDATE animals 
  SET species_id = (SELECT id FROM species WHERE name <> 'Digimon') 
  WHERE name NOT LIKE '%mon';
+
+UPDATE animals 
+SET owner_id = (SELECT id FROM owners WHERE full_name = 'Sam Smith') 
+WHERE name = 'Agumon';
+
+UPDATE animals 
+SET owner_id = (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell') 
+WHERE name IN ('Gabumon','Pikachu');
+
+UPDATE animals 
+SET owner_id = (SELECT id FROM owners WHERE full_name = 'Bob') 
+WHERE name IN ('Devimon','Plantmon');
+
+UPDATE animals 
+SET owner_id = (SELECT id FROM owners WHERE full_name = 'Melody Pond') 
+WHERE name IN ('Charmander','Squirtle', 'Blossom');
