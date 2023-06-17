@@ -11,8 +11,10 @@ SELECT * FROM animals WHERE weight_kg  BETWEEN 10.4 and 17.3;
 
 BEGIN;
 SAVEPOINT save1;
-DELETE FROM animals;
+UPDATE animals SET species = 'unspecified';
+SELECT * FROM animals;
 ROLLBACK TO SAVEPOINT save1;
+SELECT * FROM animals;
 COMMIT;
 
 BEGIN;
@@ -24,6 +26,11 @@ UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
 SELECT * FROM animals;
 COMMIT;
 
+BEGIN;
+SAVEPOINT save1;
+DELETE FROM animals;
+ROLLBACK TO SAVEPOINT save1;
+COMMIT;
 
 BEGIN;
 DELETE FROM animals WHERE date_of_birth > '2022-01-01';
