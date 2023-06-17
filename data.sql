@@ -17,10 +17,24 @@ VALUES ('Charmander', '2020-02-08', 0, false, -11),
 
 INSERT INTO owners (full_name, age)
 VALUES ('Sam Smith', 34),
+('Jennifer Orwell', 19),
 ('Bob', 45),
 ('Melody Ponbd', 77),
-('Dean Winchester', 38);
+('Dean Winchester', 14)
+('Jodie Whittaker', 38);
 
 INSERT INTO species (name)
 VALUES ('Pokemon'),
 ('Digimon');
+
+INSERT INTO animals (species_id)
+SELECT id FROM species
+WHERE name LIKE '%mon';
+
+UPDATE animals 
+SET species_id = (SELECT id FROM species WHERE name = 'Digimon')
+ WHERE name LIKE '%mon';
+
+ UPDATE animals 
+ SET species_id = (SELECT id FROM species WHERE name <> 'Digimon') 
+ WHERE name NOT LIKE '%mon';
