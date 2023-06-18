@@ -39,3 +39,9 @@ CREATE TABLE vets (
     date_of_graduation  DATE,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE specialization (
+    species_id          INT REFERENCES species (id) ON UPDATE CASCADE,
+    vet_id              INT REFERENCES vets (id) ON UPDATE CASCADE,
+    PRIMARY KEY (species_id, vet_id)
+);
