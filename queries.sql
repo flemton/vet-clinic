@@ -82,3 +82,58 @@ WHERE owners.full_name = 'Dean Winchester' AND animals.escape_attempts = 0;
 SELECT owners.full_name, COUNT(animals.name) FROM animals 
 JOIN owners ON animals.owner_id = owners.id 
 GROUP BY (owners.full_name);
+
+SELECT visits.date_of_visit, animals.name, vets.name FROM visits
+LEFT JOIN animals ON visits.animal_id = animals.id
+RIGHT JOIN vets ON visits.vet_id = vets.id
+WHERE vets.name = 'William Tatcher'
+ORDER BY visits.date_of_visit;
+
+SELECT animals.id, vets.name, animals.name FROM visits
+JOIN animals ON visits.animal_id = animals.id
+LEFT JOIN vets ON visits.vet_id = vets.id
+WHERE vets.name = 'Stephanie Mendez';
+
+SELECT vets.name AS vet_name, species.name as species FROM specialization
+JOIN species ON specialization.species_id = species.id
+RIGHT JOIN vets ON specialization.vet_id = vets.id;
+
+SELECT animals.id, vets.name, animals.name, date_of_visit FROM visits
+JOIN vets ON visits.vet_id = vets.id
+JOIN animals ON visits.animal_id = animals.id
+WHERE vets.name = 'Stephanie Mendez' 
+AND date_of_visit BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT animal_id, animals.name, COUNT(animal_id) FROM visits
+JOIN animals ON visits.animal_id = animals.id
+GROUP BY animal_id, animals.name
+order by COUNT(animal_id);
+
+SELECT animal_id, animals.name, vets.name AS vet_name, date_of_visit FROM visits
+JOIN animals ON visits.animal_id = animals.id
+JOIN vets ON visits.vet_id = vets.id
+WHERE vets.name = 'Maisy Smith'
+order by date_of_visit;
+ 
+SELECT date_of_visit, animals.*, vets.* AS max_visit FROM visits
+JOIN animals ON visits.animal_id = animals.id
+JOIN vets ON visits.vet_id = vets.id
+order by date_of_visit desc;
+
+SELECT vets.id AS vet_id, specialization.species_id AS specialization_id,
+species.name AS species_name, species.id AS animal_species_id FROM visits
+LEFT JOIN vets ON visits.vet_id = vets.id
+LEFT JOIN animals ON visits.animal_id = animals.id
+LEFT JOIN species ON animals.species_id = species.id
+LEFT JOIN specialization ON vets.id = specialization.vet_id
+WHERE vets.id != 3 
+AND specialization.species_id != species.id 
+OR specialization.species_id IS NULL
+order by vets.id;
+
+SELECT vets.name, species.id AS animal_species_id, species.name AS animal_species_name, count(species.id) FROM visits
+LEFT JOIN vets ON visits.vet_id = vets.id 
+LEFT JOIN animals ON visits.animal_id = animals.id
+LEFT JOIN species ON animals.species_id = species.id
+WHERE vets.name = 'Maisy Smith'
+GROUP BY vets.name, species.id;
