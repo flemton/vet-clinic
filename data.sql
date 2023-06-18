@@ -19,8 +19,8 @@ INSERT INTO owners (full_name, age)
 VALUES ('Sam Smith', 34),
 ('Jennifer Orwell', 19),
 ('Bob', 45),
-('Melody Ponbd', 77),
-('Dean Winchester', 14)
+('Melody Pond', 77),
+('Dean Winchester', 14),
 ('Jodie Whittaker', 38);
 
 INSERT INTO species (name)
@@ -58,3 +58,9 @@ WHERE name IN ('Charmander','Squirtle', 'Blossom');
 UPDATE animals 
 SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester') 
 WHERE name IN ('Angemon','Boarmon');
+
+INSERT INTO vets (name,age,date_of_graduation)
+VALUES ('William Tatcher',45,'2000-04-23'),
+('Maisy Smith',26,'2019-01-17'),
+('Stephanie Mendez',64,'1981-05-04'),
+('Jack Harkenss',38,'2008-06-01');
