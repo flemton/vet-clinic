@@ -87,7 +87,8 @@ SELECT visits.date_of_visit, animals.name, vets.name FROM visits
 LEFT JOIN animals ON visits.animal_id = animals.id
 RIGHT JOIN vets ON visits.vet_id = vets.id
 WHERE vets.name = 'William Tatcher'
-ORDER BY visits.date_of_visit;
+ORDER BY visits.date_of_visit
+DESC LIMIT 1;
 
 SELECT animals.id, vets.name, animals.name FROM visits
 JOIN animals ON visits.animal_id = animals.id
@@ -107,13 +108,15 @@ AND date_of_visit BETWEEN '2020-04-01' AND '2020-08-30';
 SELECT animal_id, animals.name, COUNT(animal_id) FROM visits
 JOIN animals ON visits.animal_id = animals.id
 GROUP BY animal_id, animals.name
-order by COUNT(animal_id);
+order by COUNT(animal_id)
+DESC LIMIT 1;
 
 SELECT animal_id, animals.name, vets.name AS vet_name, date_of_visit FROM visits
 JOIN animals ON visits.animal_id = animals.id
 JOIN vets ON visits.vet_id = vets.id
 WHERE vets.name = 'Maisy Smith'
-order by date_of_visit;
+order by date_of_visit
+ASC LIMIT 1;
  
 SELECT date_of_visit, animals.*, vets.* AS max_visit FROM visits
 JOIN animals ON visits.animal_id = animals.id
