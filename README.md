@@ -16,7 +16,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 <div align="center">
 
-  <h3><b>Alhassan Osman's Portfolio</b></h3>
+  <h3><b>Vet Clinic</b></h3>
 
 </div>
 
@@ -46,6 +46,8 @@ This repository includes files with plain SQL that can be used to recreate a dat
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 Vet Clinic <a name="about-project"></a>
+
+<img alt="Schema Diagram" src="./schema%20diagram.png">
 
 **Vet clinic** is a repo that has SQL queries to use a relational database to create the data structure for a vet clinic
 
